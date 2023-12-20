@@ -9,6 +9,12 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'text',
+        'platform_id',
+    ];
+
     public function platform()
     {
         return $this->belongsTo(Platform::class);

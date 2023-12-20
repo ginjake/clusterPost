@@ -25,4 +25,6 @@ Route::controller(PostController::class)->prefix('board')->group(function () {
     Route::get('get', 'get')->name('post.get');
     Route::post('post', 'post')->name('post.post2');
     Route::post('get', 'get')->name('post.get2');
+
+    Route::get('getResonite', 'getResonite')->name('post.getResonite');
 });
