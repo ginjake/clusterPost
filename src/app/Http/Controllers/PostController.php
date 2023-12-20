@@ -30,11 +30,10 @@ class PostController extends BaseController
     public function get(Request $request)
     {
 
-        $param = $request->input();
+        $param = $request->input("request");
         if (!empty($param["text"])) {
             Post::create($param);
         }
-        \Log::debug(print_r($param["request"], true));
         $posts = Post::orderBy('created_at', 'desc')->limit(5)->get();
         foreach($posts as $post) {
             $tmp["n"] = $post->name;
