@@ -31,7 +31,7 @@ class PostController extends BaseController
     {
 
         $param = json_decode($request->input("request"));
-        if (!empty($param["text"])) {
+        if (!empty($param->text)) {
             Post::create($param);
         }
         $posts = Post::orderBy('created_at', 'desc')->limit(5)->get();
