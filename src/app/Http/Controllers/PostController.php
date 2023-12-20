@@ -34,6 +34,7 @@ class PostController extends BaseController
         if (!empty($param["text"])) {
             Post::create($param);
         }
+        \Log::debug($param);
         $posts = Post::orderBy('created_at', 'desc')->limit(5)->get();
         foreach($posts as $post) {
             $tmp["n"] = $post->name;
