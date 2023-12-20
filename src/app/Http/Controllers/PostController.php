@@ -30,7 +30,7 @@ class PostController extends BaseController
     public function get(Request $request)
     {
 
-        $param = $request->input("request");
+        $param = json_decode($request->input("request"));
         if (!empty($param["text"])) {
             Post::create($param);
         }
