@@ -31,8 +31,10 @@ class PostController extends BaseController
     {
 
         $param = $request->input();
-        if ($param["type"] == "post") {
-            Post::create($param);
+        if (!empty($param["type"])) {
+            if ($param["type"] == "post") {
+                Post::create($param);
+            }
         }
         $posts = Post::orderBy('created_at', 'desc')->limit(5)->get();
         foreach($posts as $post) {
