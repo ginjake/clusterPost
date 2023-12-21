@@ -13,8 +13,8 @@ class PostController extends BaseController
 
         $param = json_decode($request->input("request"), true);
         if (!empty($param["text"])) {
-            $saveParam["name"] = $param('name');
-            $saveParam["text"] = $param('text');
+            $saveParam["name"] = $param['name'];
+            $saveParam["text"] = $param['text'];
             $saveParam["platform_id"] = 1;
             Post::create($saveParam);
         }
