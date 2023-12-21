@@ -25,7 +25,7 @@ class PostController extends BaseController
             $result[] = $tmp;
         }
 
-        $hoge["verify"] = $post->verifyToken;
+        $hoge["verify"] = $param-["verifyToken"];
         $hoge["response"] = "'".json_encode($result)."'";
         return response()->json($hoge);
     }
