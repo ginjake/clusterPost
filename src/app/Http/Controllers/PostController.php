@@ -8,10 +8,7 @@ use App\Models\Post;
 
 class PostController extends BaseController
 {
-
-
-
-    public function get(Request $request)
+    public function cluster(Request $request)
     {
 
         $param = json_decode($request->input("request"), true);
@@ -28,7 +25,7 @@ class PostController extends BaseController
             $result[] = $tmp;
         }
 
-        $hoge["verify"] = "b81cfdf8-e09b-497d-9b15-626b9389e257";
+        $hoge["verify"] = $post->verifyToken;
         $hoge["response"] = "'".json_encode($result)."'";
         return response()->json($hoge);
     }

@@ -22,9 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(PostController::class)->prefix('board')->group(function () {
     Route::get('post', 'post')->name('post.post');
-    Route::get('get', 'get')->name('post.get');
-    Route::post('post', 'post')->name('post.post2');
-    Route::post('get', 'get')->name('post.get2');
+    Route::post('cluster', 'cluster')->name('cluster.post');
 
     Route::get('resonite', 'getResonite')->name('resonite.get');
     Route::post('resonite', 'postResonite')->name('resonite.post');
