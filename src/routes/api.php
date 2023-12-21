@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::controller(PostController::class)->prefix('board')->group(function () {
-    Route::get('post', 'post')->name('post.post');
+    Route::get('cluster', 'cluster')->name('cluster.get');//clusterからgetは叩けないけどブラウザからの確認用に。
     Route::post('cluster', 'cluster')->name('cluster.post');
 
     Route::get('resonite', 'getResonite')->name('resonite.get');
